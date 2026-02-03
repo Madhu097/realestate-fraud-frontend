@@ -6,12 +6,12 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000
 // Create axios instance with default config
 const apiClient = axios.create({
     baseURL: API_BASE_URL,
-    timeout: 10000,
+    timeout: 30000, // Increased timeout for analysis requests
     headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
     },
-    withCredentials: true, // Important for CORS with credentials
+    withCredentials: false, // Must match backend CORS allow_credentials setting
 });
 
 // Request interceptor for debugging
