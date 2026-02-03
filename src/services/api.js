@@ -3,6 +3,11 @@ import axios from 'axios';
 // Backend API base URL - uses environment variable for production
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
+// Debug: Log the API URL being used
+console.log('🔗 API Base URL:', API_BASE_URL);
+console.log('🔧 Environment:', import.meta.env.MODE);
+console.log('📦 VITE_API_BASE_URL:', import.meta.env.VITE_API_BASE_URL);
+
 // Create axios instance with default config
 const apiClient = axios.create({
     baseURL: API_BASE_URL,
